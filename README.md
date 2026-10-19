@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🇪🇸 HablaDos: Castilian Spanish Duo
 
-## Getting Started
+A mobile-first web application designed for a couple to learn authentic **Castilian Spanish (*Castellano*)** rapidly and expressively through interactive AI dialogues, real-time voice corrections, and friendly competition.
 
-First, run the development server:
+Inspired by the design languages of **Samsung One UI 8.5** and **Apple iPhone 16** (liquid glassmorphism, floating capsule navigation, animated soundwaves, and haptic-feel micro-interactions).
 
+---
+
+## 🌟 Key Features
+
+1. **🇪🇸 Authentic Castilian Spanish (*Castellano*)**:
+   - Focuses strictly on Peninsular Spanish spoken in Spain (*vosotros*, *coche*, *ordenador*, *vale*, *guay*, *tapas*).
+   - Pronunciation guide covering the iconic *distinción* (/θ/ for 'c' and 'z'), trilled 'rr', and throat 'jota'.
+
+2. **💬 Conversational AI Tutor (Madrid Accent)**:
+   - Powered by **Google Gemini** (`gemini-2.5-flash`).
+   - Roleplays realistic situations (*Tapas in Madrid*, *Stroll through El Retiro*, *Atocha Train Station*, *Neighborhood Market*, *Free Chat*).
+   - Speaks in Spanish, provides instant English inline corrections when you make mistakes, and features on-demand "Explain this" dialogue grammar breakdowns.
+
+3. **🔬 Sentence Lab (Free Expression)**:
+   - Freedom to write or dictate any Spanish sentence without rigid multiple-choice restrictions.
+   - AI evaluates your sentence (0–100 score), rewrites it as a local would say it in Madrid, highlights what changed, awards XP, and triggers celebration confetti.
+
+4. **🎙️ Audio & Voice Engine**:
+   - Native Castilian Spanish voice synthesis (`es-ES`) with authentic pronunciation.
+   - Microphone dictation (speech-to-text) to practice speaking directly into your phone.
+   - Real-time animated audio wave visualizer.
+
+5. **🏆 Couple Duel & Shared Feed**:
+   - Dedicated profiles for both of you (**Él 🦁** and **Ella 👑**) with customizable names and avatars.
+   - Live head-to-head scoreboard showing who leads in Weekly XP and Streaks.
+   - Shared Daily Couple Challenge.
+   - Shared Live Activity Feed to see each other's accomplishments in real time.
+
+---
+
+## 🚀 Getting Started (Running Locally)
+
+### 1. Set Your Gemini API Key
+Create or edit `.env.local` in the project root:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+> *Tip: You can obtain a free Gemini API key at [Google AI Studio](https://aistudio.google.com/). Even without an API key, HablaDos includes a built-in Castilian simulator so you can test all features right away.*
+
+### 2. Start the Development Server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+The app will be live at `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Open on Your Phones (Local Wi-Fi)
+To test on your mobile phones while at home:
+1. Find your computer's local IP address (e.g. `192.168.1.50`).
+2. Run:
+   ```bash
+   npm run dev -- -H 0.0.0.0
+   ```
+3. Open `http://<your-computer-ip>:3000` in Safari on iPhone or Chrome on Android.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ☁️ Deploying to Vercel (Free 2-Minute Setup)
 
-## Learn More
+Because HablaDos is built with **Next.js 16**, it is 100% native to **Vercel**:
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this folder to a GitHub repository:
+   ```bash
+   git add .
+   git commit -m "Initial commit of HablaDos app"
+   git remote add origin https://github.com/<your-username>/spanish-duo.git
+   git push -u origin main
+   ```
+2. Log into [Vercel](https://vercel.com/) and click **"Add New Project"**.
+3. Import your `spanish-duo` repository.
+4. Under **Environment Variables**, add:
+   - **Key**: `GEMINI_API_KEY`
+   - **Value**: `Your Google Gemini API Key`
+5. Click **Deploy**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vercel will give you a free, public HTTPS URL (e.g. `https://spanish-duo.vercel.app`) that you and your lady can add to your phone home screens as a web app!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📱 Tech Stack
+- **Framework**: Next.js 16 (App Router, Turbopack)
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS v4, Lucide Icons, Glassmorphism
+- **AI Engine**: Google Gemini 2.5 Flash API
+- **Audio Engine**: Web Speech API (`es-ES` Castilian voice selection & speech recognition)
+- **Gamification**: Canvas Confetti, custom streak & XP storage layer
